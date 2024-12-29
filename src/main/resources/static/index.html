@@ -1,0 +1,162 @@
+<html>
+
+	<head>
+	
+		<title>aplikacija</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/stilovi.css">
+		<link href="css/navigationBar.css" rel="stylesheet" type="text/css"/>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+	
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=edde1634-4def-4172-9774-12678d706fd1&lang=en_US" type="text/javascript"></script>
+	    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    	
+	
+    <script type="text/x-template" id="modala-template">
+    
+    	<transition name="modala">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-container" style="width: 70%; height: 92%;">
+
+              <div class="modal-body">
+                <slot name="body">
+                </slot>
+              </div>
+
+              <div class="modal-footer">
+                <slot name="footer">
+                  default footer
+                  <button class="modal-default-button" @click="$emit('close')">
+                    OK
+                  </button>
+                </slot>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </transition>
+
+    </script>
+    
+    <script type="text/x-template" id="modal-template">
+      <transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-container">
+
+              <div class="modal-body">
+                <slot name="body">
+                  default body
+                </slot>
+              </div>
+
+              <div class="modal-footer">
+                <slot name="footer">
+                  default footer
+                  <button class="modal-default-button" @click="$emit('close')">
+                    OK
+                  </button>
+                </slot>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+
+    </script>
+    
+	</head>
+	
+	<body>
+	
+		<div id="mainDiv">
+			<router-view></router-view>
+		</div>
+		
+        <script src="js/vue.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/vue-router.js"></script>
+        <script src="js/axios.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/lodash.js"></script>
+        
+        <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+		<script src="https://unpkg.com/vue-chartkick@0.5.1"></script>
+        
+        <script src="app/autentifikacija/prijava.js"></script>
+		<script src="app/autentifikacija/registracija.js"></script>
+        <script src="app/autentifikacija/promenaSifre.js"></script>
+        <script src="app/autentifikacija/aktiviranjeNaloga.js"></script>
+        
+        <script src="app/pocetnaStranica/superAdminHome.js"></script>
+        <script src="app/pocetnaStranica/adminHome.js"></script>
+        <script src="app/pocetnaStranica/lekarHome.js"></script>
+        <script src="app/pocetnaStranica/sestraHome.js"></script>
+		<script src="app/pocetnaStranica/pacijentHome.js"></script>
+
+		<script src="app/profil/superAdminProfil.js"></script>
+		<script src="app/profil/adminProfil.js"></script>
+		<script src="app/profil/lekarProfil.js"></script>
+		<script src="app/profil/sestraProfil.js"></script>
+        <script src="app/profil/pacijentProfil.js"></script>
+        
+       	<script src="app/kreiranje/dodajSuperAdmina.js"></script>
+       	<script src="app/kreiranje/dodajAdmina.js"></script>
+       	<script src="app/kreiranje/dodajLekara.js"></script>
+        <script src="app/kreiranje/dodajPacijenta.js"></script>
+       	<script src="app/kreiranje/dodajDijagnozu.js"></script>
+       	<script src="app/kreiranje/dodajLek.js"></script>
+       	<script src="app/kreiranje/dodajKliniku.js"></script>
+       	<script src="app/kreiranje/dodajTipPosete.js"></script>
+       	<script src="app/kreiranje/dodajSalu.js"></script>
+       	<script src="app/kreiranje/dodajPregled.js"></script>
+        
+		<script src="app/pretraga/lekariPretraga.js"></script>
+    	<script src="app/pretraga/sestrePretraga.js"></script>        
+		<script src="app/pretraga/dijagnozePretraga.js"></script>
+		<script src="app/pretraga/lekoviPretraga.js"></script>
+	    <script src="app/pretraga/tipPosetePretraga.js"></script>
+	    <script src="app/pretraga/salaPretraga.js"></script>
+	    
+	    <script src="app/zahtevi/zahtevRegistracijaObrada.js"></script>
+	    <script src="app/zahtevi/zahtevPosetaSlanje.js"></script>
+		<script src="app/zahtevi/zahtevPregledObrada.js"></script>
+		<script src="app/zahtevi/zahtevOperacijaObrada.js"></script>
+        <script src="app/zahtevi/zahtevOdmorSlanje.js"></script>
+	    <script src="app/zahtevi/zahtevOdmorObrada.js"></script>
+    	<script src="app/zahtevi/overaRecepta.js"></script>
+		<script src="app/zahtevi/izvestaj.js"></script>
+		
+        <script src="app/pacijent/karton.js"></script>
+        <script src="app/pacijent/bolesti.js"></script>
+        <script src="app/pacijent/termini.js"></script>
+        <script src="app/pacijent/zahtevTermini.js"></script>
+        <script src="app/pacijent/klinikeSlobodno.js"></script>
+        <script src="app/pacijent/klinikeLekari.js"></script>
+	    
+		<script src="app/lekar/radniKalendar.js"></script>
+		<script src="app/lekar/godisnjiOdmori.js"></script>
+		<script src="app/lekar/zapocetPregled.js"></script>
+        <script src="app/lekar/lekarPacijenti.js"></script>
+        
+        <script src="app/zahtevi/sestraPacijenti.js"></script>        
+        
+        <script src="app/app.js"></script>
+	
+		<script>
+		Vue.component("modal", {
+		    template: "#modal-template"
+		  });
+		Vue.component("modala", {
+		    template: "#modala-template"
+		});
+		</script>
+			
+	</body>
+
+</html>
