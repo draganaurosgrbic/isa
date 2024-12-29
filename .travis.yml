@@ -1,0 +1,30 @@
+sudo: required
+language: java
+jdk: oraclejdk8
+
+services:
+  - postgresql
+
+before_install:
+  - chmod +x mvnw
+  
+install:
+- mvn -N io.takari:maven:wrapper
+- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+addons:
+  sonarcloud:
+  organization: draganagrbic998
+  token: de0330d15e9d52da1ba15fed06d44f90402aa8e8
+
+script:
+  - ./mvnw clean install -DskipTests=false -B
+  - ./mvnw sonar:sonar -Dsonar.projectKey=draganagrbic998_MRSISA2020_T1 -Dsonar.organization=draganagrbic998 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=de0330d15e9d52da1ba15fed06d44f90402aa8e8
+
+dist: trusty
+
+deploy:
+  provider: heroku
+  api_key: a116ba37-37f7-49f3-a85b-853d84577424
+  app: nasaaplikacija
+  skip_cleanup: true
